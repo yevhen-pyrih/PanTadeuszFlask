@@ -46,7 +46,15 @@
                       <a class="nav-link text-dark" href="./"
                         >Homepage</a
                       >
-                    <li class="nav-item">
+                      {% for book in range(1, 13) %}
+                        <li class="nav-item">
+                          <a
+                            class="nav-link text-secondary"
+                            href="./k{{book}}"
+                            >Book {{book}}</a>
+                        </li>
+                      {% endfor %}
+                    {# <li class="nav-item">
                       <a
                         class="nav-link text-secondary"
                         href="./k1"
@@ -106,7 +114,7 @@
                       <a
                         class="nav-link text-secondary"
                         href="./k9"
-                        >Nineth</a
+                        >Ninth</a
                       >
                     </li>
                     <li class="nav-item">
@@ -129,24 +137,19 @@
                         href="./k12"
                         >Twelfth</a
                       >
-                    </li>
+                    </li> #}
                   </ul>
                 </nav>
               </div>
               <div class="col-md-9">
+                <div
+                class="bg-white rounded shadow-sm p-4 d-flex flex-column overflow-auto"
+                style="height: 70vh" >
                 {% block content %}
-                  <p>Layout page content. </p>
+                
+                
                 {% endblock %}
-                <!-- <div
-                  class="d-flex flex-column align-items-center justify-content-center bg-white h-100 rounded shadow-sm p-4"
-                >
-                  <img
-                    src="img/pan-tadeuzs.png"
-                    alt="Pan Tadeusz"
-                    class="img-fluid w-50 mb-4"
-                  />
-                  <h3>Enjoy Adam Mickiewicz's work</h3>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
